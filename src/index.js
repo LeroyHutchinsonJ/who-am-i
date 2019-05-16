@@ -11,7 +11,7 @@ class App extends React.Component {
 
   componentDidMount = async () => {
     //Put the url in a var
-    var url = "https://randomuser.me/api/?results=20";
+    var url = "https://randomuser.me/api/?results=100";
 
     //fetch data from the url
     var response = await fetch(url);

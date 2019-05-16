@@ -2,8 +2,12 @@
   font-family: sans-serif;
   text-align: center;
 }
+html {
+  background-color: #34495e;
+}
 .images {
   border: 2px solid black;
+  width: 200px;
 }
 
 .personText {
