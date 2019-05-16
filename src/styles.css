@@ -1,4 +1,12 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  position: fixed;
+}
+.images {
+  border: 2px solid black;
+}
+
+.personText {
+  color: gray;
 }

@@ -1,18 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import shortid from "shortid";
 import "./styles.css";
 
 //Program that takes a persons face and name then puts it on the screen
 class App extends React.Component {
   state = {
-    personArr: [],
-    value: 9
+    personArr: []
   };
 
   componentDidMount = async () => {
     //Put the url in a var
-    var url = "https://randomuser.me/api/";
+    var url = "https://randomuser.me/api/?results=20";
 
     //fetch data from the url
     var response = await fetch(url);
@@ -20,15 +19,28 @@ class App extends React.Component {
     //turn data into json
     var json = await response.json();
 
-    this.setState({ personArr: json.results });
+    //When the picture is loaded, then loaded is set to true
+    this.setState({ personArr: json.results, loaded: true });
   };
   render() {
-    var { personArr, value } = this.state;
+    var { personArr } = this.state;
 
     return (
       <div className="App">
         {personArr.map(person => {
-          return <div key={value}>Hi! My name is {person.gender} </div>;
+          return (
+            <ul className="person" key={shortid()}>
+              <img
+                className="images"
+                src={person.picture.large}
+                alt="Will not load"
+              />
+              <div className="personText">
+                Hi! My name is {person.name.first} {person.name.last}
+                {""}
+              </div>
+            </ul>
+          );
         })}
       </div>
     );
