@@ -19,8 +19,8 @@ class App extends React.Component {
     //turn data into json
     var json = await response.json();
 
-    //When the picture is loaded, then loaded is set to true
-    this.setState({ personArr: json.results, loaded: true });
+    //Set the picture
+    this.setState({ personArr: json.results });
   };
   render() {
     var { personArr } = this.state;
