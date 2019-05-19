@@ -22,6 +22,7 @@ class App extends React.Component {
     //Set the picture
     this.setState({ personArr: json.results });
   };
+  //Checking
   render() {
     var { personArr } = this.state;
 
