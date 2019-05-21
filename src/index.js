@@ -11,7 +11,7 @@ class App extends React.Component {
 
   componentDidMount = async () => {
     //Put the url in a var
-    var url = "https://randomuser.me/api/?results=100";
+    var url = "https://randomuser.me/api/?results=50";
 
     //fetch data from the url
     var response = await fetch(url);
@@ -22,7 +22,7 @@ class App extends React.Component {
     //Set the picture
     this.setState({ personArr: json.results });
   };
-  //Checking
+
   render() {
     var { personArr } = this.state;
 
